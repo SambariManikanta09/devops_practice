@@ -23,5 +23,10 @@ This Python script allows you to start or stop AWS EC2 instances. You can provid
         ```python script_name.py --stop --file instance_ids.txt```
 
 
+### File Format
 
-
+    The file containing instance IDs should have one instance ID per line. For example:
+        ```
+        i-0abcd1234efgh5678
+        i-0wxyz6789ijkl1234
+        ```
