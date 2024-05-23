@@ -21507,10 +21507,13 @@ spec:
     port: 80
     protocol: TCP
     targetPort: 8080
+    nodePort: 30008
   - name: https
     port: 443
     protocol: TCP
     targetPort: 8080
+    nodePort: 30007
+  type: NodePort
   selector:
     app.kubernetes.io/name: argocd-server
 ---
