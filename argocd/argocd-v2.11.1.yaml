@@ -21132,6 +21132,7 @@ rules:
   - argoproj.io
   resources:
   - workflows
+  - pods/exec
   verbs:
   - create
 ---
@@ -21289,6 +21290,8 @@ metadata:
     app.kubernetes.io/name: argocd-cm
     app.kubernetes.io/part-of: argocd
   name: argocd-cm
+data:
+  exec.enabled: "true"
 ---
 apiVersion: v1
 kind: ConfigMap
@@ -21317,6 +21320,33 @@ metadata:
 ---
 apiVersion: v1
 kind: ConfigMap
+data:
+  policy.default: role:readonly
+  policy.csv: |
+    p, role:org-admin, applications, *, */*, allow
+    p, role:org-admin, clusters, create, *, allow
+    p, role:org-admin, projects, create, *, allow
+    p, role:org-admin, repositories, get, *, allow
+    p, role:org-admin, repositories, create, *, allow
+    p, role:org-admin, repositories, update, *, allow
+    p, role:org-admin, repositories, delete, *, allow
+    p, role:org-admin, certificates, create, *, allow
+    p, role:org-admin, accounts, create, *, allow
+    p, role:org-admin, gpgkeys, create, *, allow
+    p, role:org-admin, exec, create, */*, allow
+    p, role:org-admin, logs, get, *, allow
+    p, role:action-runner, applications, action/argoproj.io/Rollout/abort, *, allow
+    p, role:action-runner, applications, action/argoproj.io/Rollout/promote-full, *, allow
+    p, role:action-runner, applications, action/argoproj.io/Rollout/retry, *, allow
+    p, role:action-runner, applications, action/argoproj.io/Rollout/resume, *, allow
+    p, role:action-runner, applications, action/argoproj.io/Rollout/restart, *, allow
+    p, role:action-runner, applications, action/argoproj.io/AnalysisRun/terminate, *, allow
+    p, role:action-runner, applications, action/apps/DaemonSet/restart, *, allow
+    p, role:action-runner, applications, action/apps/StatefulSet/restart, *, allow
+    p, role:action-runner, applications, action/apps/Deployment/pause, *, allow
+    p, role:action-runner, applications, action/apps/Deployment/resume, *, allow
+    p, role:action-runner, applications, action/apps/Deployment/restart, *, allow
+    g, devops, role:org-admin
 metadata:
   labels:
     app.kubernetes.io/name: argocd-rbac-cm
