@@ -1,13 +1,12 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-name: index-html-configmap
-namespace: default
+  name: index-html-configmap
+  namespace: apps
 data:
-index.html:|
-<html>
-<h1>Welcome to Mani's cluster!</h1>
-</br>
-</html
-<h1>This web page is housed on a Pod running Nginx</h1>
-</html 
+  index.html: |
+    <html>
+    <h1>Welcome to Mani's cluster!</h1>
+    <br/>
+    <h1>This web page is housed on a Pod running Nginx</h1>
+    </html>
