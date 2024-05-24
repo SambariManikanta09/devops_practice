@@ -1,13 +1,13 @@
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: GitRepository
 metadata:
-  name: flux-system
+  name: apps
   namespace: flux-system
 spec:
   interval: 1m0s
   ref:
     branch: apps
   secretRef:
-    name: apps
+    name: flux-system
   timeout: 60s
   url: https://github.com/SambariManikanta09/devops_practice.git
