@@ -1,13 +1,13 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: nginx
+  name: frontend
   namespace: argocd
 spec:
   clusterResourceWhitelist:
   - group: '*'
     kind: '*'
-  description: For NGINX
+  description: For frontend
   destinations:
   - name: '*'
     namespace: '*'
