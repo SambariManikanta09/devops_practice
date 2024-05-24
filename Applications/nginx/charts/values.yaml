@@ -8,6 +8,6 @@ image:
 service:
   type: NodePort
   port: 80
-  nodePort: 30010  # Change this to any desired node port within the valid range (30000-32767)
+  nodePort: 30005  # Change this to any desired node port within the valid range (30000-32767)
 
 resources: {}
