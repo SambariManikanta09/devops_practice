@@ -4,7 +4,7 @@ metadata:
   annotations:
     notifications.argoproj.io/subscribe.teams: channelName
   name: nginx
-  namespace: apps
+  namespace: argocd
 spec:
   destination:
     namespace: apps
