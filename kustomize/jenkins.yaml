@@ -7,7 +7,7 @@ metadata:
   namespace: argocd
 spec:
   destination:
-    namespace: apps
+    namespace: jenkins
     server: 'https://kubernetes.default.svc'
   source:
     path: Applications/Jenkins/charts
@@ -16,7 +16,7 @@ spec:
     helm:
       valueFiles:
       - values.yaml
-  project: default
+  project: jenkins
   syncPolicy:
     automated:
       prune: true
