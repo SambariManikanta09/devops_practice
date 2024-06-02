@@ -3,6 +3,6 @@ kind: Kustomization
 resources:
 - argo-project.yaml
 - nginx.yaml
-# - jenkins.yaml
+- jenkins.yaml
 
 
