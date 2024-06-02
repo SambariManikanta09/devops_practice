@@ -16,7 +16,7 @@ spec:
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: Databases
+  name: databases
   namespace: argocd
 spec:
   clusterResourceWhitelist:
