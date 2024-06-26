@@ -7,10 +7,10 @@ metadata:
   namespace: argocd
 spec:
   destination:
-    namespace: apps
+    namespace: observability
     server: 'https://kubernetes.default.svc'
   source:
-    path: Applications/nginx/charts
+    path: grafana/
     repoURL: 'https://github.com/SambariManikanta09/devops_practice.git'
     targetRevision: apps
     helm:

@@ -4,5 +4,6 @@ resources:
 - argo-project.yaml
 - nginx.yaml
 - jenkins.yaml
+- grafana.yaml
 
 
